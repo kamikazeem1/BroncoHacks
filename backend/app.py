@@ -13,10 +13,10 @@ app = Flask(__name__)
 def home():
     return 'Flask backend is running!'
 
-@app.route('/incoming-sms', methods=['POST'])
-def incoming_sms():
-    text_info = request.get_xml()
-    print("Parsed SMS data:", text_info)
+# @app.route('/incoming-sms', methods=['POST'])
+# def incoming_sms():
+#     text_info = request.get_xml()
+#     print("Parsed SMS data:", text_info)
 
 @app.route('/incoming-email', methods=['POST'])
 def incoming_email():
