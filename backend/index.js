@@ -1,21 +1,29 @@
 const express = require('express');
-const cors = require('cors');
-const path = require('path');
-
 const app = express();
-const PORT = 5000;
+const port = process.env.PORT || 5000;
 
-app.use(cors());
+// Middleware to parse incoming JSON
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Serve static frontend files if needed
-app.use(express.static(path.join(__dirname, '../frontend')));
+// Endpoint to receive forwarded email
+app.post('/incoming-email', (req, res) => {
+    const emailData = req.body;
+    
+    // Extract information from email
+    const sender = emailData.sender;
+    const subject = emailData.subject;
+    const body = emailData['stripped-text']; // The email body in plain text
 
-// Example API route
-app.get('/api/hello', (req, res) => {
-  res.json({ message: 'Hello from Express!' });
+    // Process the email data (validate sender, check URLs, etc.)
+    console.log('Received email from:', sender);
+    console.log('Subject:', subject);
+    console.log('Body:', body);
+
+    // Respond to Mailgun
+    res.status(200).send('OK');
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
 });
