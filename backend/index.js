@@ -15,10 +15,6 @@ app.use(express.json());
 // Serve static frontend files if needed
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-// Example API route
-app.get('/api/hello', (req, res) => {
-  res.json({ message: 'Hello from Express!' });
-});
 
 // 📨 Email Risk Check
 app.post('/api/check-email', async (req, res) => {
@@ -43,43 +39,39 @@ app.post('/api/check-email', async (req, res) => {
   }
 });
 
-//Email Content Risk Check
-app.post('/api/check-email-content', async (req, res) => {
-  const { emailContent } = req.body;
+//Email/Text Content Risk Check
+app.post('/api/check-content', async (req, res) => {
+  const { content } = req.body;
   const apiKey = process.env.IP_QUALITY_SCORE_API_KEY;
-  
+
   if (!apiKey) {
     return res.status(500).json({ error: 'API key not configured' });
   }
-  
-  if (!emailContent) {
-    return res.status(400).json({ error: 'Email content is required' });
+
+  if (!content) {
+    return res.status(400).json({ error: 'Message content is required' });
   }
-  
+
   try {
-    // IP Quality Score content analysis endpoint
     const apiUrl = 'https://www.ipqualityscore.com/api/json/contentAnalysis/' + apiKey;
-    
-    // Using POST method for content analysis as the text can be large
+
     const apiResponse = await fetch(apiUrl, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        text: emailContent,
-        language: 'en', // You can make this a parameter if needed
-        strictness: 1,  // Medium strictness (0-2)
-        timeout: 30     // Timeout in seconds
+        text: content,
+        language: 'en',
+        strictness: 1,
+        timeout: 30
       })
     });
-    
+
     const data = await apiResponse.json();
-    
+
     res.json({ result: data });
   } catch (error) {
-    console.error('Error analyzing email content:', error);
-    res.status(500).json({ error: 'Failed to analyze email content' });
+    console.error('Error analyzing message content:', error);
+    res.status(500).json({ error: 'Failed to analyze message content' });
   }
 });
 
@@ -233,4 +225,8 @@ app.post('/api/generate-safety-summary', async (req, res) => {
     console.error('Error generating safety summary:', error);
     res.status(500).json({ error: 'Failed to generate safety summary', details: error.message });
   }
+});
+
+app.listen(port, () => {
+  console.log(`🚀 Server running on http://localhost:${port}`);
 });
