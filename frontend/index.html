@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vanilla Frontend</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <h1 id="title">IsThisFraud?</h1>
+  <label for="feature-select">What do you need help with?</label>
+  
+  <select name="feature-select" id="feature-select">
+    <option value="select">Click here to make selection</option>
+    <option value="email">Check email</option>
+    <option value="text">Check text message</option>
+    <option value="link">Check link</option>
+  </select>
+  <br></br>
+  <button id="submit-selection" onclick="displayForm()">Submit selection</button>
+
+  <div class="checker-div" id="email-section">
+    <br>
+    <h3>Email Checker</h3>
+    <p>What is the email address the email came from?</p>
+    <input placeholder="Enter email address"></input>
+    <br></br>
+    <p>What is the full text content of the email?</p>
+    <textarea placeholder="Enter the content of the email"></textarea>
+    <br>
+  </div>
+
+  <div class="checker-div" id="text-section">
+    <br>
+    <h3>Text Message Checker</h3>
+    <p>Did the text come from a phone number or email?</p>
+    <select>
+      <option value="number">Phone number</option>
+      <option value="email">Email</option>
+    </select>
+    <br></br>
+    <div id="text-number">
+      <p>What is the phone number the text came from?</p>
+      <input placeholder="Enter phone number"></input>
+    </div>
+
+    <div id="text-email">
+      <p>What is the email the text came from?</p>
+      <input placeholder="Enter email address"></input>
+    </div>
+
+    <br>
+    <p>What is the full content of the text message?</p>
+    <textarea placeholder="Enter the content of the text message"></textarea>
+    <br>
+  </div>
+
+  <div class="checker-div" id="link-section">
+    <p>Please copy-and-paste the url you would like to check</p>
+    <input placeholder="Paste url here"></input>
+    <br></br>
+    <p>Please manually type out the name of the website in the url (example: www.websitename.com)</p>
+    <textarea placeholder="Type out the name of the website"></textarea>
+    <br>
+  </div>
+
+</body>
+</html>
