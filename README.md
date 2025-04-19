@@ -1,4 +1,4 @@
-#IsThisFraud?
+IsThisFraud?
 
 *Demo Video*: 
 
