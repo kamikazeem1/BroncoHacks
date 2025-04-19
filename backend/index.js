@@ -4,8 +4,6 @@ const cors = require('cors');
 const bodyParser = require("body-parser");
 const axios = require('axios');
 require('dotenv').config();
-console.log('IP_QUALITY_SCORE_API_KEY:', process.env.IP_QUALITY_SCORE_API_KEY);
-console.log('GROQ_API_KEY:', process.env.GROQ_API_KEY);
 const path = require('path');
 
 const app = express();

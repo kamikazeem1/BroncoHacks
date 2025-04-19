@@ -1,34 +1,34 @@
 body {
-    font-family: sans-serif;
-    padding: 2rem;
-    background-color: #f9f9f9;
-  }
-  
-  h1 {
-    text-align: center;
-  }
+  font-family: sans-serif;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
 
-  .checker-div {
-    display: none;
+h1 {
+  text-align: center;
+}
 
-  }
-  .center {
-    position: absolute;
-    top: 50%;
-    right: 10%;
-    transform:translateY(-50%);
-    font-size: 2em;
-   }
-  /*animation*/
-  .fade-animation {
-    animation: fadeIn 6s; 
+.checker-div {
+  display: none;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform:translateY(-50%);
+  font-size: 2em;
+ }
+/*animation*/
+.fade-animation {
+  animation: fadeIn 6s; 
 }
 @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-   
-
-  }
-
+section button input textarea {
+  text-align: left;
+  max-width: 100px;
+}
