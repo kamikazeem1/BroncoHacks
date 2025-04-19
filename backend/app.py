@@ -47,10 +47,38 @@ def send_simple_message(info, scam, verdict):
             "from": "isthisfraud <alerts@fraudalerthub.info>",
             "to": f"Valued Customer <{info['forwarder_email']}>",
             "subject": "Email Results",
-            "text": f'''Email: {info['original_email']}
-            IsValid?:{scam['valid']}
-            Summary: {verdict}
-                    '''
+            "html": f'''
+                <html>
+                <body style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px;">
+                    <div style="max-width: 600px; margin: auto; background: #ffffff; border: 1px solid #ddd; border-radius: 8px; padding: 20px;">
+                    <h2 style="color: #2c3e50;">Fraud Check Report</h2>
+                    
+                    <p style="font-size: 16px; margin-bottom: 10px;">
+                        <strong>Email:</strong> {info['original_email']}
+                    </p>
+
+                    <p style="font-size: 16px; margin-bottom: 10px;">
+                        <strong>Is Valid?</strong> 
+                        <span style="color: {'green' if scam['valid'] else 'red'}; font-weight: bold;">
+                        {'Yes ✅' if scam['valid'] else 'No ❌'}
+                        </span>
+                    </p>
+
+                    <p style="font-size: 16px; margin-top: 20px;">
+                        <strong>Summary:</strong>
+                        <br />
+                        {verdict}
+                    </p>
+                    
+                    <hr style="margin: 30px 0;" />
+                    <p style="font-size: 12px; color: #999;">
+                        This analysis was powered by FraudAlertHub. Results are for informational purposes only.
+                    </p>
+                    </div>
+                </body>
+                </html>
+                '''
+
         }
     )
 
