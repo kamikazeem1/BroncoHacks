@@ -26,7 +26,6 @@ def incoming_email():
     '''
     {
         "forwarder_email": forwarder_email,
-        "forwarder_name": forwarder_name,
         "original_email": original_email,
         "body": body.strip()
     }'''
@@ -45,8 +44,8 @@ def send_simple_message(info, scam, verdict):
         "https://api.mailgun.net/v3/fraudalerthub.info/messages",
         auth=("api", f"{os.environ.get('MAILGUN_API_KEY')}"),  # Use the environment variable for API key
         data={
-            "from": "IsThisFraud? <alerts@fraudalerthub.info>",
-            "to": f"{info['forwarder_name']} <{info['forwarder_email']}>",
+            "from": "isthisfraud <alerts@fraudalerthub.info>",
+            "to": f"Valued Customer <{info['forwarder_email']}>",
             "subject": "Email Results",
             "html": f'''
                 <html>
