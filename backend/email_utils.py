@@ -36,9 +36,10 @@ def extract_name_and_email(text):
     """Extracts first valid email from a string."""
     match = re.search(r'[\w\.-]+@[\w\.-]+', text)
     if match:
-        name = match.group(1).strip().strip('"') or None
-        email = match.group(2).strip()
-    return name, email
+        name = match.group(1) or None
+        email = match.group(2)
+        return name, email
+    return None, None
 
 def extract_forwarded_sender_email(body):
     """
