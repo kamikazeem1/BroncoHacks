@@ -41,9 +41,11 @@ select, button, input, textarea {
 }
 
 .header-image {
-  width: 100%;
-  height: auto;
-  background-image: url('security_banner.jpg');
+  width: calc(100% + 16px);
+  height: 250px;
+  display: block;
+  margin: -8px -8px 20px -8px;
+  object-fit: cover;
 }
 
 #results-section {
