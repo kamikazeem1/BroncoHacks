@@ -54,3 +54,11 @@ select, button, input, textarea {
   padding: 20px;
   margin-top: 20px;
 }
+
+#center-text{
+  text-align: center;
+}
+
+#right-text{
+  text-align: right;
+}
