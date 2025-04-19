@@ -1,10 +1,7 @@
 body {
-  background-color: #031E5D;
   font-family: 'Special Gothic Expanded One', sans-serif;
   font-size: 25px;
   color: white;
-  /*testing gradient
-  */
   background: conic-gradient(
     from 90deg at center,
     #00BCFF,
@@ -16,7 +13,7 @@ body {
     #00BCFF
   );
   background-repeat: no-repeat;
-  margin-bottom: 80px
+  margin-bottom: 80px;
 }
 
 h1 {
@@ -25,6 +22,17 @@ h1 {
 
 .checker-div {
   display: none;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  margin-left: 5vw;
+  padding-left: 15px;
+  margin-right: 5vw;
+  padding-right: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .center {
@@ -46,12 +54,39 @@ h1 {
 }
 
 select, button, input, textarea {
-  text-align: left;
-  max-width: 300px;
+  /* text-align: center; */
+  /* max-width: 300px; */
   font-size: 18px;
+  font-family: "Special Gothic", sans-serif;
+  color: white;
+  background-color: rgb(48, 48, 48);
+  padding: 8px 8px 8px 8px;
   margin-bottom: 15px;
-  display: block;
-  padding: 0.5rem;
+  display: inline-block;
+  padding: 0.8rem;
+  border-radius: 22px;
+  border-style: solid;
+  border-color: rgb(109, 109, 109);
+  border-width: 2px;
+  box-shadow: 5px 5px 10px rgb(63, 63, 63);
+  cursor: pointer;
+
+}
+
+#selection-div {
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 15px;
+  /* margin-right: 20vw;
+  margin-left: 20vw; */
+  button {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  /* width: 50vw; */
+  /* margin-left: 50vw; */
+  /* margin-right: 80vw; */
+  /* align-self: center; */
 }
 
 .header-image {
@@ -83,6 +118,13 @@ select, button, input, textarea {
   background-color: rgba(17, 25, 40, 0.75);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
+  margin-left: 5vw;
+  padding-left: 15px;
+  margin-right: 5vw;
+  padding-right: 15px;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 #title-card {
