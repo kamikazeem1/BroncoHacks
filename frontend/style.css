@@ -10,6 +10,7 @@ body {
 
   .checker-div {
     display: none;
+
   }
   .center {
     position: absolute;
@@ -28,3 +29,6 @@ body {
 }
 
    
+
+  }
+

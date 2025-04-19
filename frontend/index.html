@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Special+Gothic+Expanded+One&display=swap"> <!--added font -->
   <link rel="icon" href="favicontest2.ico" type="image/x-icon"> <!--added favicon -->
 
@@ -40,6 +41,16 @@
   <font color="white">
   <label for="feature-select"> What do you need help with?</label>
   </font>
+
+  <title>Vanilla Frontend</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <h1 id="title">IsThisFraud?</h1>
+  <label for="feature-select">What do you need help with?</label>
+  
+
   <select name="feature-select" id="feature-select">
     <option value="select">Click here to make selection</option>
     <option value="email">Check email</option>
@@ -51,7 +62,9 @@
 
   <div class="checker-div" id="email-section">
     <br>
+
     <font color="white">
+
     <h3>Email Checker</h3>
     <p>What is the email address the email came from?</p>
     <input placeholder="Enter email address"></input>
@@ -79,6 +92,7 @@
       <p>What is the email the text came from?</p>
       <input placeholder="Enter email address"></input>
     </div>
+
     <br>
     <p>What is the full content of the text message?</p>
     <textarea placeholder="Enter the content of the text message"></textarea>
@@ -86,13 +100,20 @@
   </div>
 
   <div class="checker-div" id="link-section">
+
     <p>Please copy-and-paste the URL you would like to check</p>
     <input placeholder="Paste URL here"></input>
+
+    <p>Please copy-and-paste the url you would like to check</p>
+    <input placeholder="Paste url here"></input>
+
     <br></br>
     <p>Please manually type out the name of the website in the url (example: www.websitename.com)</p>
     <textarea placeholder="Type out the name of the website"></textarea>
     <br>
+
   </font>
+
   </div>
 
 </body>
