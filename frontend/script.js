@@ -46,8 +46,6 @@ fetch('/api/groq', {
 
 
 
-  
-=======
   function displayForm() {
     //hide all active form sections
     document.getElementById('email-section').style.display = "none";
