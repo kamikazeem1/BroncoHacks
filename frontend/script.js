@@ -202,3 +202,23 @@ function displayForm() {
 
   document.getElementById('results-section').style.display = 'none';
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const copyEmail = document.getElementById('copy-email');
+  const copyConfirm = document.getElementById('copy-confirm');
+
+  if (copyEmail) {
+    copyEmail.addEventListener('click', () => {
+      navigator.clipboard.writeText(copyEmail.textContent).then(() => {
+        if (copyConfirm) {
+          copyConfirm.style.display = 'inline';
+          setTimeout(() => {
+            copyConfirm.style.display = 'none';
+          }, 1500);
+        }
+      });
+    });
+  }
+});
+
+
