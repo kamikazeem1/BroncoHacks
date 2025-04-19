@@ -18,33 +18,38 @@
 <body>
   <img src="security_banner.jpg" alt="Security Banner" class="header-image" />
 
-  <div class="fade-animation">
+  <div id="title-card" class="fade-animation">
     <h1 id="title">IsThis<span style="color: hsl(184, 79%, 49%);">Fraud</span>?</h1>
   </div>
 
-  <div id="center-text"class="fade-animation">
-    <p>Don't Get <strong style="color: hsl(184, 79%, 49%);">Scammed</span></strong>. Get Your Emails, Links, <br> and Phone Numbers <strong style="color: hsl(184, 79%, 49%);">Verified</strong> Today!</p>
+  <div class="mirror-finish">
+    <div id="center-text"class="fade-animation">
+      <p>Don't Get <strong style="color: hsl(184,   79%, 49%);">Scammed</span></strong>. Get Your   Emails, Links, <br> and Texts <strong   style="color: hsl(184, 79%, 49%);">Verified</strong> Today!</p>
+    </div>
+
+    <div id="center-text"class="fade-animation">
+      <p><strong style="color: hsl(184, 79%, 49%);">OR</span></strong></p>
+    </div>
+
+    <div id="center-text"class="fade-animation">
+      <p>Forward <strong style="color: hsl(184, 79%, 49%);">suspicious emails </span></strong> here:</p>
+      <p>check@fraudalerthub.info</p>
+    </div>
   </div>
 
-  <div id="center-text"class="fade-animation">
-    <p><strong style="color: hsl(184, 79%, 49%);">OR</span></strong></p>
+
+  <div id="selection-div">
+    <select name="feature-select" id="feature-select">
+      <option value="select">Click here to select a feature!</option>
+      <option value="email">Check email</option>
+      <option value="text">Check text message</option>
+      <option value="link">Check link</option>
+    </select>
+    <button id="submit-selection" onclick="displayForm()">Submit selection</button>
   </div>
-
-  <div id="right-text"class="fade-animation">
-    <p>Forward<strong style="color: hsl(184, 79%, 49%);">suspicious emails </span></strong> here: check@fraudalerthub.info</p>
-  </div>
-
-  <label for="feature-select">Paste your suspicious <span style="color: hsl(184, 79%, 49%);">emails</span>, 
-    <br>
-    <span style="color: hsl(184, 79%, 49%);">numbers</span>, and <span style="color: hsl(184, 79%, 49%);">links</span> here</label>
-  <select name="feature-select" id="feature-select">
-    <option value="select">Click here to make selection</option>
-    <option value="email">Check email</option>
-    <option value="text">Check text message</option>
-    <option value="link">Check link</option>
-  </select>
-
-  <button id="submit-selection" onclick="displayForm()">Submit selection</button>
+  <!-- <label for="feature-select">Paste your suspicious <span style="color: hsl(184, 79%, 49%);">emails</span>,
+    <span style="color: hsl(184, 79%, 49%);">numbers</span>, and <span style="color: hsl(184, 79%, 49%);">links</span> here
+  </label> -->
 
   <div class="checker-div" id="email-section">
     <h3>Email Checker</h3>

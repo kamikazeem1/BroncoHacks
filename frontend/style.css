@@ -3,6 +3,20 @@ body {
   font-family: 'Special Gothic Expanded One', sans-serif;
   font-size: 25px;
   color: white;
+  /*testing gradient
+  */
+  background: conic-gradient(
+    from 90deg at center,
+    #00BCFF,
+    90deg,
+    #007CFF,
+    180deg,
+    #A300FF,
+    315deg,
+    #00BCFF
+  );
+  background-repeat: no-repeat;
+  margin-bottom: 80px
 }
 
 h1 {
@@ -61,4 +75,20 @@ select, button, input, textarea {
 
 #right-text{
   text-align: right;
+}
+
+.mirror-finish {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+#title-card {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  margin: -20px -8px 20px -8px;
+  padding: 10px 0px 10px 0px
 }
