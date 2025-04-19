@@ -1,0 +1,15 @@
+.center {
+   position: absolute;
+   top: 50%;
+   right: 10%;
+   transform:translateY(-50%);
+   font-size: 2em;
+  }
+.fade-animation {
+    animation: fade5s; 
+
+}
+@keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
