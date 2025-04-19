@@ -1,18 +1,19 @@
 const express = require('express');
 const axios = require('axios');
 const FormData = require('form-data');
+const Mailgun = require('mailgun.js');
+const mailgun = new Mailgun(FormData);
+const mg = mailgun.client({ username: 'api', key: process.env.MAILGUN_API_KEY });
+
 const app = express();
 const port = process.env.PORT;
-
-require('dotenv').config();
 
 // Middleware to parse incoming JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const MAILGUN_API_KEY = process.env.MAILGUN_API_KEY;
 const MAILGUN_DOMAIN = process.env.MAILGUN_DOMAIN;
-const FROM_EMAIL = `Fraud Alert <mailgun@${MAILGUN_DOMAIN}`;
+const FROM_EMAIL = `Fraud Alert <response@${MAILGUN_DOMAIN}`;
 
 // Endpoint to receive forwarded email
 app.post('/incoming-email', async (req, res) => {
@@ -34,25 +35,7 @@ app.post('/incoming-email', async (req, res) => {
     form.append('subject', 'Re: ' + subject);
     form.append('text', replyText);
 
-    try {
-        const mgRes = await axios.post(
-            `https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`,
-            form,
-            {
-                auth: {
-                    username: 'api',
-                    password: MAILGUN_API_KEY,
-                },
-                headers: form.getHeaders()
-            }
-        );
-
-        console.log('Reply sent to:', sender);
-        res.status(200).send('OK');
-    } catch (error) {
-        console.error('Failed to send reply:', error.response?.data || error.message);
-        res.status(500).send('Error sending reply');
-    }
+    mg.messages.create(MAILGUN_DOMAIN, form).then(msg => HTMLFormControlsCollection.log(msg)).catch(err => console.error(err));
 });
 
 app.listen(port, () => {
