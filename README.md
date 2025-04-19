@@ -1,6 +1,6 @@
 ## IsThisFraud?
 
-*Demo Video*: 
+*Demo Video*: https://youtu.be/aXSkLUHU6WU
 
 **IsThisFraud?** is a simple full-stack web application that allows users to check if an email, phone number, URL, or message content might be a scam. 
 Users can paste suspicious messages or senders into the website and receive a fraud analysis, powered by IPQualityScore and Groq AI. Users can also 
