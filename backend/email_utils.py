@@ -33,14 +33,16 @@ def parse_forwarded_email_mailgun(request_form):
     }
 
 def extract_name_and_email(text):
-    """Extracts first valid email from a string."""
-    match = re.search(r'[\w\.-]+@[\w\.-]+', text)
+    """
+    Extracts name and email from a string in the format: "Name <email@example.com>"
+    Returns (name, email). Name may be None if not present.
+    """
+    match = re.match(r'(.*?)(?:\s*<)?([\w\.-]+@[\w\.-]+)>?', text.strip())
     if match:
-        name = match.group(1) or None
-        email = match.group(2)
+        name = match.group(1).strip().strip('"') or None
+        email = match.group(2).strip()
         return name, email
     return None, None
-
 def extract_forwarded_sender_email(body):
     """
     Scans body for the original sender in forwarded email formats.
