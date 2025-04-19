@@ -1,4 +1,4 @@
-IsThisFraud?
+## IsThisFraud?
 
 *Demo Video*: 
 
@@ -9,7 +9,7 @@ suspicious email is valid, and categorizes the email in terms of safeness.
 
 ---
 
-## 🔍 Features
+## Features
 
 - ✅ Email address verification
 - ✅ Phone number fraud check
@@ -20,7 +20,7 @@ suspicious email is valid, and categorizes the email in terms of safeness.
 
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** Node.js (Express)
