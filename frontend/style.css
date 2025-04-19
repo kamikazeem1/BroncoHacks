@@ -59,18 +59,26 @@ select, button, input, textarea {
   font-size: 18px;
   font-family: "Special Gothic", sans-serif;
   color: white;
-  background-color: rgb(48, 48, 48);
+  background-color:#031E5D;
+  /* background-color: rgb(48, 48, 48); */
   padding: 8px 8px 8px 8px;
   margin-bottom: 15px;
   display: inline-block;
   padding: 0.8rem;
-  border-radius: 22px;
-  border-style: solid;
-  border-color: rgb(109, 109, 109);
-  border-width: 2px;
-  box-shadow: 5px 5px 10px rgb(63, 63, 63);
+  border-radius: 25px;
+  border-style: none;
+  /* border-color: #031E5D; */
+  /* border-width: 2px; */
+  box-shadow: 5px 5px 10px rgb(33, 60, 163);
   cursor: pointer;
+}
 
+select:hover, button:hover {
+  box-shadow: none;
+  margin-top: 3px;
+  margin-bottom: 12px;
+  margin-left: 3px !important;
+  margin-right: -3px !important;
 }
 
 #selection-div {
