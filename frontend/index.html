@@ -3,66 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <title>IsThisFraud?</title>
+  
+  <!-- Fonts & Favicon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Special+Gothic+Expanded+One&display=swap">
+  <link rel="icon" href="favicontest2.ico" type="image/x-icon">
+
+  <!-- Custom Styles & Script -->
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
+
+  <style>    
+  </style>
 </head>
 <body>
-  <h1 id="title">IsThisFraud?</h1>
+  <div class="header-image"></div>
+
+  <div class="fade-animation">
+    <h1 id="title">IsThis<span style="color: hsl(184, 79%, 49%);">Fraud</span>?</h1>
+  </div>
+
+  <div class="fade-animation">
+    <p>Don't Get <strong style="color: hsl(184, 79%, 49%);">Scammed</span></strong>. Get Your Emails, Links, <br> and Phone Numbers <strong style="color: hsl(184, 79%, 49%);">Verified</strong> Today!</p>
+  </div>
+
   <label for="feature-select">What do you need help with?</label>
-  
   <select name="feature-select" id="feature-select">
     <option value="select">Click here to make selection</option>
     <option value="email">Check email</option>
     <option value="text">Check text message</option>
     <option value="link">Check link</option>
   </select>
-  <br></br>
+
   <button id="submit-selection" onclick="displayForm()">Submit selection</button>
 
   <div class="checker-div" id="email-section">
-    <br>
     <h3>Email Checker</h3>
-    <p>What is the email address the email came from?</p>
-    <input placeholder="Enter email address"></input>
-    <br></br>
-    <p>What is the full text content of the email?</p>
-    <textarea placeholder="Enter the content of the email"></textarea>
-    <br>
+    <p>State the suspicious email address.</p>
+    <input placeholder="Enter email address" />
+    
+    <p>Please type out the content of the email.</p>
+    <textarea id="emailContent" placeholder="Enter the content of the email"></textarea>
+
+    <button id="submit-email">Check Email</button>
   </div>
 
   <div class="checker-div" id="text-section">
-    <br>
     <h3>Text Message Checker</h3>
-    <p>Did the text come from a phone number or email?</p>
-    <select>
-      <option value="number">Phone number</option>
-      <option value="email">Email</option>
-    </select>
-    <br></br>
-    <div id="text-number">
-      <p>What is the phone number the text came from?</p>
-      <input placeholder="Enter phone number"></input>
-    </div>
+    <p>State the suspicious phone number.</p>
+    <input placeholder="Enter phone number" />
 
-    <div id="text-email">
-      <p>What is the email the text came from?</p>
-      <input placeholder="Enter email address"></input>
-    </div>
+    <p>Please type out the content of the message.</p>
+    <textarea id="messageContent" placeholder="Enter the content of the message"></textarea>
 
-    <br>
-    <p>What is the full content of the text message?</p>
-    <textarea placeholder="Enter the content of the text message"></textarea>
-    <br>
+    <button id="submit-text">Check Text Message</button>
   </div>
 
   <div class="checker-div" id="link-section">
-    <p>Please copy-and-paste the url you would like to check</p>
-    <input placeholder="Paste url here"></input>
-    <br></br>
-    <p>Please manually type out the name of the website in the url (example: www.websitename.com)</p>
-    <textarea placeholder="Type out the name of the website"></textarea>
-    <br>
+    <h3>Link Checker</h3>
+    <p>Please copy-and-paste the URL you would like to check.</p>
+    <input id="url" placeholder="Paste URL here" />
+    <button id="submit-link">Check Link</button>
   </div>
 
+  <div id="results-section" style="display: none;">
+    <h2>Analysis Results</h2>
+    <div id="results-content"></div>
+  </div>
 </body>
 </html>

@@ -1,13 +1,54 @@
 body {
-    font-family: sans-serif;
-    padding: 2rem;
-    background-color: #f9f9f9;
-  }
-  
-  h1 {
-    text-align: center;
-  }
+  background-color: #031E5D;
+  font-family: 'Special Gothic Expanded One', sans-serif;
+  font-size: 25px;
+  color: white;
+}
 
-  .checker-div {
-    display: none;
-  }
+h1 {
+  text-align: center;
+}
+
+.checker-div {
+  display: none;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform:translateY(-50%);
+  font-size: 2em;
+ }
+
+/*animation*/
+.fade-animation {
+  animation: fadeIn 1s ease-in-out;
+  /* animation: fadeIn 6s;  */
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+select, button, input, textarea {
+  text-align: left;
+  max-width: 100px;
+  font-size: 18px;
+  margin-bottom: 15px;
+  display: block;
+  padding: 0.5rem;
+}
+
+.header-image {
+  width: 100%;
+  height: auto;
+  background-image: url('security_banner.jpg');
+}
+
+#results-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
