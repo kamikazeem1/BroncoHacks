@@ -5,7 +5,7 @@
   <title>IsThisFraud?</title>
   
   <!-- Fonts & Favicon -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Special+Gothic+Expanded+One&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Special+Gothic+Expanded+One&family=Special+Gothic&display=swap">
   <link rel="icon" href="newFavicon.ico" type="image/x-icon">
 
   <!-- Custom Styles & Script -->
@@ -38,13 +38,14 @@
   </div>
 
 
-  <div id="selection-div">
+  <div id="selection-div" class="mirror-finish">
     <select name="feature-select" id="feature-select">
       <option value="select">Click here to select a feature!</option>
       <option value="email">Check email</option>
       <option value="text">Check text message</option>
       <option value="link">Check link</option>
     </select>
+    <br>
     <button id="submit-selection" onclick="displayForm()">Submit selection</button>
   </div>
   <!-- <label for="feature-select">Paste your suspicious <span style="color: hsl(184, 79%, 49%);">emails</span>,
@@ -58,7 +59,7 @@
     
     <p>Please type out the content of the email.</p>
     <textarea id="emailContent" placeholder="Enter the content of the email"></textarea>
-
+    <br>
     <button id="submit-email">Check Email</button>
   </div>
 
@@ -69,7 +70,7 @@
 
     <p>Please type out the content of the message.</p>
     <textarea id="messageContent" placeholder="Enter the content of the message"></textarea>
-
+    <br>
     <button id="submit-text">Check Text Message</button>
   </div>
 
@@ -77,10 +78,11 @@
     <h3>Link Checker</h3>
     <p>Please copy-and-paste the URL you would like to check.</p>
     <input id="url" placeholder="Paste URL here" />
+    <br>
     <button id="submit-link">Check Link</button>
   </div>
 
-  <div id="results-section" style="display: none;">
+  <div class="mirror-finish" id="results-section" style="display: none;">
     <h2><strong style="color: hsl(184, 79%, 49%);"></span></strong></h2>
     <div id="results-content"></div>
   </div>
