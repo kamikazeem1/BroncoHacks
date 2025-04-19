@@ -4,7 +4,6 @@ fetch('/api/hello')
     document.getElementById('message').textContent = data.message;
   });
 
-<<<<<<< HEAD
 //fetch Groq api
 fetch('/api/groq', {
   method: 'POST',
@@ -69,4 +68,7 @@ fetch('/api/groq', {
         document.getElementById('link-section').style.display = "block";
     }
   }
->>>>>>> 42ca2bce1d18ca01221720d1bfde7a88fc5eb0b6
+
+
+
+  
